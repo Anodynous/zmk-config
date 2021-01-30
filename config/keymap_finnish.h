@@ -1,4 +1,4 @@
-/* Copied from QMK, adopted for ZMK by Anodynous
+/* Copied from QMK, adapted for ZMK by Anodynous
  * 
  * Copyright 2020
  *
