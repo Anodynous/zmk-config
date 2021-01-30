@@ -36,7 +36,7 @@
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |NUMPAD| LAlt | LCTR |SPACE | / LOWER /       \ RAISE\  |Enter |MOUSEK| RAltoo | RGUI |
  *            | temp |      |      |      |/ layer/          \ layer\ |      | RIGHT|        |      |
- *            `----------------------------------'           '------''------------------------------'
+ *            `----------------------------------'            '------''-----------------------------'
  */
             bindings = <
 &kp ESC     &kp N1   &kp N2      &kp N3    &kp N4     &kp N5                                 &kp N6   &kp N7    &kp N8    &kp N9   &kp N0       &kp FI_QUOT
@@ -64,7 +64,7 @@
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |      |      |      |      | / LOWER /       \ RAISE\  |      |      |      |      |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'           '------''----------------------------'
+ *            `----------------------------------'            '------''---------------------------'
  */            
             bindings = <
 &trans    &kp F1       &kp F2       &kp F3         &kp F4       &kp F5                              &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11
@@ -92,12 +92,12 @@
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |      |      |      | BSPC | / LOWER /       \ RAISE\  |      |      |      |      |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'           '------''----------------------------'
+ *            `----------------------------------'            '------''---------------------------'
  */
             bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                      &trans    &trans    &trans    &trans     &trans   &ext_power EP_TOG
 &trans     &trans       &kp INS        &kp PSCRN     &kp K_CMENU      &trans                            &trans    &trans    &kp UP    &trans     &kp N0   &kp FI_GRV
-&trans     &trans       &kp C_AC_SAVE  &kp SNIP     &kp C_AC_SEARCH  &kp CLCK                          &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC &kp FI_QUOT
+&trans     &trans       &kp C_AC_SAVE  &kp SNIP      &kp C_AC_SEARCH  &kp CLCK                          &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC &kp FI_QUOT
 &trans     &kp K_UNDO   &kp K_CUT      &kp K_COPY    &kp K_PASTE      &trans      &trans       &trans   &kp PG_DN &kp HOME  &kp DEL   &kp END    &trans   &trans
                         &trans         &trans        &trans           &kp BSPC    &trans       &trans   &trans    &trans    &trans    &trans
             >;
@@ -120,17 +120,18 @@
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            |      |      |      |      | / LOWER /       \ RAISE\  |      |  0   |      |      |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'           '------''---------------------------'
+ *            `----------------------------------'            '------''---------------------------'
  */
            bindings = <
-&trans     &trans       &trans        &trans      &trans       &trans                       &trans    &trans       &kp KP_SLASH &kp KP_MULTIPLY  &trans         &trans
-&trans     &trans       &trans        &trans      &trans       &trans                       &trans    &kp KP_N7    &kp KP_N8    &kp KP_N9         &kp KP_MINUS   &trans
-&trans     &trans       &trans        &trans      &trans       &trans                       &trans    &kp KP_N4    &kp KP_N5    &kp KP_N6         &kp KP_PLUS    &trans
-&trans     &trans       &trans        &trans      &trans       &trans  &trans       &trans  &trans    &kp KP_N1    &kp KP_N2    &kp KP_N3         &kp KP_COMMA   &trans
-                        &trans        &trans      &trans       &trans  &trans       &trans  &trans    &kp KP_N0    &trans       &trans
+&trans     &trans       &trans        &trans      &trans       &trans                       &trans    &trans    &kp KP_SLASH  &kp KP_MULTIPLY   &trans         &trans
+&trans     &trans       &trans        &trans      &trans       &trans                       &trans    &kp N7    &kp N8        &kp N9            &kp KP_MINUS   &trans
+&trans     &trans       &trans        &trans      &trans       &trans                       &trans    &kp N4    &kp N5        &kp N6            &kp KP_PLUS    &trans
+&trans     &trans       &trans        &trans      &trans       &trans  &trans       &trans  &trans    &kp N1    &kp N2        &kp N3            &kp KP_COMMA   &trans
+                        &trans        &trans      &trans       &trans  &trans       &trans  &trans    &kp N0    &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
+
     };
 };
