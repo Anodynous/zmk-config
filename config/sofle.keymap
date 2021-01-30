@@ -13,7 +13,8 @@
         compatible = "zmk,keymap";
 
         default_layer {
-/*
+
+/* 
  * QWERTY
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |   '  |
@@ -29,11 +30,11 @@
  *            `----------------------------------'           '------''------------------------------'
  */
             bindings = <
-&kp ESC &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
-&kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                       &kp Y  &kp U     &kp I     &kp O    &kp P    &kp BSPC
-&kp LSHFT   &kp A  &kp S    &kp D    &kp F     &kp G                       &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LCTRL &kp Z  &kp X    &kp C    &kp V     &kp B  &kp C_MUTE &none     &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-                 &kp LGUI &kp LALT &kp LCTRL &kp SPACE &mo 1    &mo 2  &kp RET  &kp RCTRL &kp RALT  &kp RGUI
+&kp ESC   &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6   &kp N7    &kp N8    &kp N9   &kp N0    &kp NON_US_HASH
+&kp TAB   &kp Q  &kp W    &kp E    &kp R     &kp T                       &kp Y    &kp U     &kp I     &kp O    &kp P     &kp BSPC
+&kp LSHFT &kp A  &kp S    &kp D    &kp F     &kp G                       &kp H    &kp J     &kp K     &kp L    &kp SEMI  &kp SQT
+&kp LCTRL &kp Z  &kp X    &kp C    &kp V     &kp B  &kp C_MUTE   &none   &kp N    &kp M     &kp COMMA &kp DOT  &kp FSLH  &kp RSHFT
+                 &kp LGUI &kp LALT &kp LCTRL &kp SPACE &mo 1      &mo 2  &kp RET  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -41,7 +42,8 @@
 
         lower_layer {
 
-/* LOWER
+/* 
+ * LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -55,13 +57,12 @@
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''----------------------------'
  */            
-// TODO: Some binds are waiting for shifted keycode support.
             bindings = <
-&trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &kp F11
-&trans    &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                    &kp N6    &kp N7   &kp N8    &kp N9    &kp N0    &kp F12
-&kp ESC   &kp EXCL  &kp DQT   &kp HASH    &kp EQUAL &kp PRCNT                 &kp AMPS  &kp FSLH &kp LPAR  &kp RPAR  &kp QMARK &kp PIPE
-&trans    &kp TILDE &kp AT    &kp KP_PLUS  &kp LBRC  &kp RBRC  &trans   &trans &kp LBKT  &kp RBKT &kp LT    &kp GT  &kp BSLH  &kp ASTRK
-                    &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans    &trans
+&trans    &kp F1    &kp F2    &kp F3       &kp F4    &kp F5                      &kp F6     &kp F7    &kp F8    &kp F9    &kp F10    &kp F11
+&trans    &kp N1    &kp N2    &kp N3       &kp N4    &kp N5                      &kp N6     &kp N7    &kp N8    &kp N9    &kp N0     &kp F12
+&kp ESC   &kp EXCL  &kp DQT   &kp HASH     &kp EQUAL &kp PRCNT                   &kp AMPS   &kp FSLH  &kp LPAR  &kp RPAR  &kp QMARK  &kp PIPE
+&trans    &kp TILDE &kp AT    &kp KP_PLUS  &kp LBRC  &kp RBRC  &trans     &trans &kp LBKT   &kp RBKT  &kp LT    &kp GT    &kp BSLH   &kp ASTRK
+                    &trans    &trans       &trans    &trans    &trans     &trans &trans     &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -69,7 +70,8 @@
 
         raise_layer {
 
-// ---/* RAISE
+/* 
+ * RAISE
  * ,----------------------------------------.                     ,-----------------------------------------.
  * |BTCLR | BT0  | BT1  | BT2  | BT3  | BT4  |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -79,16 +81,16 @@
  * |------+------+------+------+------+------|  MUTE |    |  PLAY |------+------+------+------+------+------|
  * |      | Undo |  Cut | Copy | Paste|      |-------|    |-------| PGdn | LStr |  Del | LEnd |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |      |      |      |      | / LOWER /       \ RAISE\  |      |      |      |      |
+ *            |      |      |      | BSPC | / LOWER /       \ RAISE\  |      |      |      |      |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''----------------------------'
  */
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans   &trans    &trans  &trans
-&trans     &trans       &kp INS      &kp PSCRN    &kp K_CMENU  &trans                       &trans    &trans    &kp UP   &trans    &kp N0  &kp KP_PLUS
-&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                     &kp PG_UP &kp LEFT  &kp DOWN &kp RIGHT &kp BSPC &kp SQT
-&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans  &trans       &trans  &kp PG_DN &trans    &kp DEL  &trans    &trans  &trans
-                        &trans       &trans       &trans       &trans  &trans       &trans  &trans    &trans    &trans   &trans
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                 &trans    &trans    &trans    &trans     &trans   &trans
+&trans     &trans       &kp INS      &kp PSCRN    &kp K_CMENU  &trans                       &trans    &trans    &kp UP    &trans     &kp N0   &kp PLUS
+&trans     &kp LALT     &kp LCTRL    &kp LSHFT    &trans       &kp CLCK                     &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC &kp NON_US_HASH
+&trans     &kp K_UNDO   &kp K_CUT    &kp K_COPY   &kp K_PASTE  &trans  &trans       &trans  &kp PG_DN &trans    &kp DEL   &trans     &trans   &trans
+                        &trans       &trans       &trans       &kp BSPC  &trans       &trans  &trans    &trans    &trans    &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
