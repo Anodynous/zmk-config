@@ -95,7 +95,7 @@
  *            `----------------------------------'           '------''----------------------------'
  */
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                      &trans    &trans    &trans    &trans     &trans   &EP_TOG
+&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                      &trans    &trans    &trans    &trans     &trans   &ext_power EP_TOG
 &trans     &trans       &kp INS        &kp PSCRN     &kp K_CMENU      &trans                            &trans    &trans    &kp UP    &trans     &kp N0   &kp FI_GRV
 &trans     &trans       &kp C_AC_SAVE  &kp SNIP     &kp C_AC_SEARCH  &kp CLCK                          &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC &kp FI_QUOT
 &trans     &kp K_UNDO   &kp K_CUT      &kp K_COPY    &kp K_PASTE      &trans      &trans       &trans   &kp PG_DN &kp HOME  &kp DEL   &kp END    &trans   &trans
