@@ -49,15 +49,15 @@
  * | LCTR |   Z  |   X  |   C  |   V  |   B  |-------|              |-------|   N  |   M  |   ,  |   .  |   -  |RShift|
  * `-----------------------------------------/       /               \      \-----------------------------------------'
  *            |NUMPAD| LAlt | LCTR |SPACE | / LOWER /                 \ RAISE\  |Enter |RCTRL | RAlt  | RGUI |
- *            |toggle|      |      |      |/       /                   \      \ |      |      |       |      |
+ *            |LayTap|      |      |      |/       /                   \      \ |      |      |       |      |
  *            `----------------------------------'                      '------''----------------------------'
  */
             bindings = <
-&kp ESC     &kp N1   &kp N2      &kp N3    &kp N4     &kp N5                                   &kp N6   &kp N7    &kp N8    &kp N9   &kp N0       &kp FI_QUOT
-&kp TAB     &kp Q    &kp W       &kp E     &kp R      &kp T                                    &kp Y    &kp U     &kp I     &kp O    &kp P        &kp FI_ARNG
-&kp LSHFT   &kp A    &kp S       &kp D     &kp F      &kp G                                    &kp H    &kp J     &kp K     &kp L    &kp FI_ODIA  &kp FI_ADIA
-&kp LCTRL   &kp Z    &kp X       &kp C     &kp V      &kp B      &kp C_MUTE         &kp C_PP   &kp N    &kp M     &kp COMMA &kp DOT  &kp FI_MINS  &kp RSHFT
-                     &tog NUMPAD &kp LALT  &kp LCTRL  &kp SPACE  &mo LOWER          &mo RAISE  &kp RET  &kp RCTRL &kp RALT  &kp RGUI
+&kp ESC     &kp N1   &kp N2             &kp N3    &kp N4     &kp N5                                   &kp N6   &kp N7    &kp N8    &kp N9   &kp N0       &kp FI_QUOT
+&kp TAB     &kp Q    &kp W              &kp E     &kp R      &kp T                                    &kp Y    &kp U     &kp I     &kp O    &kp P        &kp FI_ARNG
+&kp LSHFT   &kp A    &kp S              &kp D     &kp F      &kp G                                    &kp H    &kp J     &kp K     &kp L    &kp FI_ODIA  &kp FI_ADIA
+&kp LCTRL   &kp Z    &kp X              &kp C     &kp V      &kp B      &kp C_MUTE         &kp C_PP   &kp N    &kp M     &kp COMMA &kp DOT  &kp FI_MINS  &kp RSHFT
+                     &lt NUMPAD NUMPAD  &kp LALT  &kp LCTRL  &kp SPACE  &mo LOWER          &mo RAISE  &kp RET  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
