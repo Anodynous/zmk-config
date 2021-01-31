@@ -174,8 +174,8 @@
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
 
-        template_layer {
-
+//        template_layer {
+//
 /* 
  * TEMPLATE
  * ,-----------------------------------------.                              ,-----------------------------------------.
@@ -191,16 +191,16 @@
  *            |      |      |      |      |/       /                   \      \ |      |      |      |      |
  *            `----------------------------------'                      '------''---------------------------'
  */
-            bindings = <
-&trans     &trans     &trans     &trans     &trans     &trans                                &trans     &trans     &trans     &trans     &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans                                &trans     &trans     &trans     &trans     &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans                                &trans     &trans     &trans     &trans     &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans     &trans     &trans     &trans
-                      &trans     &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans     &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
-        };
+//            bindings = <
+//&trans     &trans     &trans     &trans     &trans     &trans                                &trans     &trans     &trans     &trans     &trans     &trans
+//&trans     &trans     &trans     &trans     &trans     &trans                                &trans     &trans     &trans     &trans     &trans     &trans
+//&trans     &trans     &trans     &trans     &trans     &trans                                &trans     &trans     &trans     &trans     &trans     &trans
+//&trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans     &trans     &trans     &trans
+//                      &trans     &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans     &trans
+//            >;
+//
+//            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+//        };
 
 
     };
