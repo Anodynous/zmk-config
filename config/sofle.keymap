@@ -23,8 +23,9 @@
 #define _COPY LC(C) 
 #define _PASTE LC(V)
 #define _SAVE LC(S)
-#define _UNDU LC(Z)
+#define _UNDO LC(Z)
 #define _REDO LC(Y)
+#define _SEARCH LC(F)
 #define _PWRD LC(LEFT)
 #define _NWRD LC(RIGHT)
 #define _BSWRD LC(BSPC)
@@ -109,7 +110,7 @@
             bindings = <
 &trans     &trans       &trans         &trans        &trans           &trans                                  &trans    &trans    &trans    &trans     &trans     &trans
 &trans     &trans       &kp INS        &kp PSCRN     &kp K_CMENU      &trans                                  &trans    &kp _PWRD &kp UP    &kp _NWRD  &kp _BSWRD &kp FI_GRV
-&trans     &kp _REDO    &kp _SAVE      &kp _SNIP     &kp C_AC_SEARCH  &trans                                  &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC   &kp FI_QUOT
+&trans     &kp _REDO    &kp _SAVE      &kp _SNIP     &kp _SEARCH      &trans                                  &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC   &kp FI_QUOT
 &trans     &kp _UNDO    &kp _CUT       &kp _COPY     &kp _PASTE       &trans      &trans           &trans     &kp PG_DN &kp HOME  &kp DEL   &kp END    &trans     &trans
                         &trans         &trans        &trans           &kp BSPC    &mo ADJUST       &trans     &trans    &trans    &trans    &trans
             >;
