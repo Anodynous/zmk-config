@@ -10,12 +10,24 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include "keymap_finnish.h"
 
-
-#define QWERTY 0
+// Custom Layers
+#define DEFAULT 0
 #define LOWER 1
 #define RAISE 2
-#define NUMPAD 3
-#define SNIP LG(LS(S))  // Windows snip shortcut
+#define ADJUST 3
+#define NUMPAD 4
+
+// Custom Keycodes
+#define _SNIP LG(LS(S))  // Windows snip shortcut
+#define _CUT LC(X)
+#define _COPY LC(C) 
+#define _PASTE LC(V)
+#define _SAVE LC(S)
+#define _UNDU LC(Z)
+#define _REDO LC(Y)
+#define _PWRD LC(LEFT)
+#define _NWRD LC(RIGHT)
+#define _BSWRD LC(BSPC)
 
 / {
     keymap {
@@ -24,26 +36,26 @@
         default_layer {
 
 /* 
- * QWERTY
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * | ESC  |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  |   '  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * | Tab  |   Q  |   W  |   E  |   R  |   T  |                    |   Y  |   U  |   I  |   O  |   P  |   Å  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |LShift|   A  |   S  |   D  |   F  |   G  |-------.    ,-------|   H  |   J  |   K  |   L  |   Ö  |   Ä  |
- * |------+------+------+------+------+------|  MUTE |    |  PLAY |------+------+------+------+------+------|
- * | LCTR |   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   -  |RShift|
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |NUMPAD| LAlt | LCTR |SPACE | / LOWER /       \ RAISE\  |Enter |RCTRL | RAlt  | RGUI |
- *            | temp |      |      |      |/ layer/          \ layer\ |      |      |       |      |
- *            `----------------------------------'            '------''----------------------------'
+ * DEFAULT
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * | ESC  |   1  |   2  |   3  |   4  |   5  |                              |   6  |   7  |   8  |   9  |   0  |   '  |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * | Tab  |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |   Å  |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |LShift|   A  |   S  |   D  |   F  |   G  |-------.              ,-------|   H  |   J  |   K  |   L  |   Ö  |   Ä  |
+ * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
+ * | LCTR |   Z  |   X  |   C  |   V  |   B  |-------|              |-------|   N  |   M  |   ,  |   .  |   -  |RShift|
+ * `-----------------------------------------/       /               \      \-----------------------------------------'
+ *            |NUMPAD| LAlt | LCTR |SPACE | / LOWER /                 \ RAISE\  |Enter |RCTRL | RAlt  | RGUI |
+ *            |toggle|      |      |      |/       /                   \      \ |      |      |       |      |
+ *            `----------------------------------'                      '------''----------------------------'
  */
             bindings = <
 &kp ESC     &kp N1   &kp N2      &kp N3    &kp N4     &kp N5                                 &kp N6   &kp N7    &kp N8    &kp N9   &kp N0       &kp FI_QUOT
 &kp TAB     &kp Q    &kp W       &kp E     &kp R      &kp T                                  &kp Y    &kp U     &kp I     &kp O    &kp P        &kp FI_ARNG
 &kp LSHFT   &kp A    &kp S       &kp D     &kp F      &kp G                                  &kp H    &kp J     &kp K     &kp L    &kp FI_ODIA  &kp FI_ADIA
 &kp LCTRL   &kp Z    &kp X       &kp C     &kp V      &kp B      &kp C_MUTE       &kp C_PP   &kp N    &kp M     &kp COMMA &kp DOT  &kp FI_MINS  &kp RSHFT
-                     &mo NUMPAD  &kp LALT  &kp LCTRL  &kp SPACE  &mo LOWER        &mo RAISE  &kp RET  &kp RCTRL &kp RALT  &kp RGUI
+                     &tog NUMPAD &kp LALT  &kp LCTRL  &kp SPACE  &mo LOWER        &mo RAISE  &kp RET  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -53,25 +65,25 @@
 
 /* 
  * LOWER
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |   1  |   2  |   3  |   4  |   5  |                    |   6  |   7  |   8  |   9  |   0  | F12  |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |  ESC |   !  |   "  |   #  |   =  |   %  |-------.    ,-------|   &  |   /  |   (  |   )  |   ?  |   |  |
- * |------+------+------+------+------+------|  MUTE |    |  PLAY |------+------+------+------+------+------|
- * |      |  ~   |  @   |  +   |   {  |   }  |-------|    |-------|   [  |   ]  |   <  |   >  |   \  |  *   |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |      |      |      |      | / LOWER /       \ RAISE\  |      |      |      |      |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'            '------''---------------------------'
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * |      |  F1  |  F2  |  F3  |  F4  |  F5  |                              |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |      |   1  |   2  |   3  |   4  |   5  |                              |   6  |   7  |   8  |   9  |   0  | F12  |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |  ESC |   !  |   "  |   #  |   =  |   %  |-------.              ,-------|   &  |   /  |   (  |   )  |   ?  |   |  |
+ * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
+ * |      |  ~   |  @   |  +   |   {  |   }  |-------|              |-------|   [  |   ]  |   <  |   >  |   \  |  *   |
+ * `-----------------------------------------/       /               \      \-----------------------------------------'
+ *            |      |      |      |      | / LOWER /                 \  ADJ \  |      |      |      |      |
+ *            |      |      |      |      |/       /                   \      \ |      |      |      |      |
+ *            `----------------------------------'                      '------''---------------------------'
  */            
             bindings = <
-&trans    &kp F1       &kp F2       &kp F3         &kp F4       &kp F5                              &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11
-&trans    &kp N1       &kp N2       &kp N3         &kp N4       &kp N5                              &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp F12
-&kp ESC   &kp FI_EXLM  &kp FI_DQUO  &kp FI_HASH    &kp FI_EQL   &kp FI_PERC                         &kp FI_AMPR  &kp FI_SLSH  &kp FI_LPRN  &kp FI_RPRN  &kp FI_QUES  &kp FI_PIPE
-&trans    &kp FI_TILD  &kp FI_AT    &kp FI_PLUS    &kp FI_LCBR  &kp FI_RCBR  &trans       &trans    &kp FI_LBRC  &kp FI_RBRC  &kp FI_LABK  &kp FI_RABK  &kp FI_BSLS  &kp FI_ASTR
-                       &trans       &trans         &trans       &trans       &trans       &trans    &trans       &trans       &trans       &trans
+&trans    &kp F1       &kp F2       &kp F3         &kp F4       &kp F5                                   &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11
+&trans    &kp N1       &kp N2       &kp N3         &kp N4       &kp N5                                   &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp F12
+&kp ESC   &kp FI_EXLM  &kp FI_DQUO  &kp FI_HASH    &kp FI_EQL   &kp FI_PERC                              &kp FI_AMPR  &kp FI_SLSH  &kp FI_LPRN  &kp FI_RPRN  &kp FI_QUES  &kp FI_PIPE
+&trans    &kp FI_TILD  &kp FI_AT    &kp FI_PLUS    &kp FI_LCBR  &kp FI_RCBR   &trans       &trans        &kp FI_LBRC  &kp FI_RBRC  &kp FI_LABK  &kp FI_RABK  &kp FI_BSLS  &kp FI_ASTR
+                       &trans       &trans         &trans       &trans        &trans       &mo ADJUST    &trans       &trans       &trans       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -81,25 +93,53 @@
 
 /* 
  * RAISE
- * ,----------------------------------------.                     ,-----------------------------------------.
- * |BTCLR | BT0  | BT1  | BT2  | BT3  | BT4  |                    |      |      |      |      |      |EP_TOG|
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      | Ins  | Pscr | Menu |      |                    |      |-PWrd-|  Up  |-NWrd-|-DLine|  `   |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      | Save | Snip |Search|      |-------.    ,-------| PGup | Left | Down | Rigth| Bspc |  '   |
- * |------+------+------+------+------+------|  MUTE |    |  PLAY |------+------+------+------+------+------|
- * |      | Undo |  Cut | Copy | Paste|      |-------|    |-------| PGdn | HOME |  Del | LEnd |      |      |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |      |      |      | BSPC | / LOWER /       \ RAISE\  |      |      |      |      |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'            '------''---------------------------'
+ * ,----------------------------------------.                               ,-----------------------------------------.
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |      |      | Ins  | Pscr | Menu |      |                              |      | PWrd |  Up  | NWrd | BSWrd|  `   |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |      | Redo | Save | Snip |Search|      |-------.              ,-------| PGup | Left | Down | Rigth|BSpace|  '   |
+ * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
+ * |      | Undo |  Cut | Copy | Paste|      |-------|              |-------| PGdn | Home |  Del | End  |      |      |
+ * `-----------------------------------------/       /               \      \-----------------------------------------'
+ *            |      |      |      |BSpace| /  ADJ  /                 \ RAISE\  |      |      |      |      |
+ *            |      |      |      |      |/       /                   \      \ |      |      |      |      |
+ *            `----------------------------------'                      '------''---------------------------'
  */
             bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                      &trans    &trans    &trans    &trans     &trans   &ext_power EP_TOG
-&trans     &trans       &kp INS        &kp PSCRN     &kp K_CMENU      &trans                            &trans    &trans    &kp UP    &trans     &kp N0   &kp FI_GRV
-&trans     &trans       &kp C_AC_SAVE  &kp SNIP      &kp C_AC_SEARCH  &kp CLCK                          &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC &kp FI_QUOT
-&trans     &kp K_UNDO   &kp K_CUT      &kp K_COPY    &kp K_PASTE      &trans      &trans       &trans   &kp PG_DN &kp HOME  &kp DEL   &kp END    &trans   &trans
-                        &trans         &trans        &trans           &kp BSPC    &trans       &trans   &trans    &trans    &trans    &trans
+&trans     &trans       &trans         &trans        &trans           &trans                                  &trans    &trans    &trans    &trans     &trans     &trans
+&trans     &trans       &kp INS        &kp PSCRN     &kp K_CMENU      &trans                                  &trans    &kp _PWRD &kp UP    &kp _NWRD  &kp _BSWRD &kp FI_GRV
+&trans     &kp _REDO    &kp _SAVE      &kp _SNIP     &kp C_AC_SEARCH  &trans                                  &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC   &kp FI_QUOT
+&trans     &kp _UNDO    &kp _CUT       &kp _COPY     &kp _PASTE       &trans      &trans           &trans     &kp PG_DN &kp HOME  &kp DEL   &kp END    &trans     &trans
+                        &trans         &trans        &trans           &kp BSPC    &mo ADJUST       &trans     &trans    &trans    &trans    &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        adjust_layer {
+
+/* 
+ * ADJUST
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * |BT_NXT| BT0  | BT1  | BT2  | BT3  | BT4  |                              |BTCLR |      |      |      |      |EP_TOG|
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |BT_PRV|      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |      |      |      |  NUM |DFAULT| CAPS |-------.              ,-------|      |      |      |      |      |      |
+ * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------|              |-------|      |      |      |      |      |      |
+ * `-----------------------------------------/       /               \      \-----------------------------------------'
+ *            |      |      |      |      | / LOWER /                 \ RAISE\  |      |      |      |      |
+ *            |      |      |      |      |/       /                   \      \ |      |      |      |      |
+ *            `----------------------------------'                      '------''---------------------------'
+ */
+            bindings = <
+&bt BT_NXT &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4                             &bt BT_CLR &trans     &trans     &trans     &trans     &ext_power EP_TOG
+&bt BT_PRV &trans       &trans         &trans         &trans          &trans                                   &trans     &trans     &trans     &trans     &trans     &trans
+&trans     &trans       &trans         &to NUMPADD    &to DEFAULT     &kp CLCK                                 &trans     &trans     &trans     &trans     &trans     &trans
+&trans     &trans       &trans         &trans         &trans          &trans        &trans          &trans     &trans     &trans     &trans     &trans     &trans     &trans
+                        &trans         &trans         &trans          &trans        &trans          &trans     &trans     &trans     &trans     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -109,18 +149,18 @@
 
  /*
  * NUMPAD
- * ,-----------------------------------------.                    ,-----------------------------------------.
- * |      |      |      |      |      |      |                    |      |      |   /  |  *   |      |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |                    |      |   7  |   8  |  9   |  -   |      |
- * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------.    ,-------|      |   4  |   5  |  6   |  +   |      |
- * |------+------+------+------+------+------|  MUTE |    |  PLAY |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|      |   1  |   2  |  3   |  ,   |      |
- * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |      |      |      |      | / LOWER /       \ RAISE\  |      |  0   |      |      |
- *            |      |      |      |      |/       /         \      \ |      |      |      |      |
- *            `----------------------------------'            '------''---------------------------'
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * |      |      |      |      |      |      |                              |      |      |   /  |  *   |      |      |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |                              |      |   7  |   8  |  9   |  -   |      |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------.              ,-------|      |   4  |   5  |  6   |  +   |      |
+ * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------|              |-------|      |   1  |   2  |  3   |  ,   |      |
+ * `-----------------------------------------/       /               \      \-----------------------------------------'
+ *            |      |      |      |      | / LOWER /                 \ RAISE\  |      |  0   |      |      |
+ *            |      |      |      |      |/       /                   \      \ |      |      |      |      |
+ *            `----------------------------------'                      '------''---------------------------'
  */
            bindings = <
 &trans     &trans       &trans        &trans      &trans       &trans                       &trans    &trans    &kp KP_SLASH  &kp KP_MULTIPLY   &trans         &trans
@@ -132,6 +172,35 @@
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
         };
+
+        template_layer {
+
+/* 
+ * TEMPLATE
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------.              ,-------|      |      |      |      |      |      |
+ * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------|              |-------|      |      |      |      |      |      |
+ * `-----------------------------------------/       /               \      \-----------------------------------------'
+ *            |      |      |      |      | / LOWER /                 \ RAISE\  |      |      |      |      |
+ *            |      |      |      |      |/       /                   \      \ |      |      |      |      |
+ *            `----------------------------------'                      '------''---------------------------'
+ */
+            bindings = <
+&trans     &trans     &trans     &trans     &trans     &trans                                &trans     &trans     &trans     &trans     &trans     &trans
+&trans     &trans     &trans     &trans     &trans     &trans                                &trans     &trans     &trans     &trans     &trans     &trans
+&trans     &trans     &trans     &trans     &trans     &trans                                &trans     &trans     &trans     &trans     &trans     &trans
+&trans     &trans     &trans     &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans     &trans     &trans     &trans
+                      &trans     &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans     &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
 
     };
 };
