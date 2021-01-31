@@ -115,7 +115,7 @@
                         &trans         &trans        &trans           &kp BSPC    &mo ADJUST       &trans     &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>; //Flipped to normal
         };
 
         adjust_layer {
@@ -138,7 +138,7 @@
             bindings = <
 &bt BT_NXT &bt BT_SEL 0 &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4                             &bt BT_CLR &trans     &trans     &trans     &trans     &ext_power EP_TOG
 &bt BT_PRV &trans       &trans         &trans         &trans          &trans                                   &trans     &trans     &trans     &trans     &trans     &trans
-&trans     &trans       &trans         &to NUMPADD    &to DEFAULT     &kp CLCK                                 &trans     &trans     &trans     &trans     &trans     &trans
+&trans     &trans       &trans         &to NUMPAD    &to DEFAULT     &kp CLCK                                 &trans     &trans     &trans     &trans     &trans     &trans
 &trans     &trans       &trans         &trans         &trans          &trans        &trans          &trans     &trans     &trans     &trans     &trans     &trans     &trans
                         &trans         &trans         &trans          &trans        &trans          &trans     &trans     &trans     &trans     &trans
             >;
