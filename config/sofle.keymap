@@ -59,7 +59,7 @@
                      &tog NUMPAD &kp LALT  &kp LCTRL  &kp SPACE  &mo LOWER        &mo RAISE  &kp RET  &kp RCTRL &kp RALT  &kp RGUI
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
 
         lower_layer {
@@ -87,7 +87,7 @@
                        &trans       &trans         &trans       &trans        &trans       &mo ADJUST    &trans       &trans       &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
 
         raise_layer {
@@ -97,11 +97,11 @@
  * ,----------------------------------------.                               ,-----------------------------------------.
  * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |      |      | Ins  | Pscr | Menu |      |                              |      | PWrd |  Up  | NWrd | BSWrd|  `   |
+ * |      |      | Ins  | Pscr | Menu |      |                              |      | PWrd |  Up  | NWrd |      |  `   |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |      | Redo | Save | Snip |Search|      |-------.              ,-------| PGup | Left | Down | Rigth|BSpace|  '   |
  * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
- * |      | Undo |  Cut | Copy | Paste|      |-------|              |-------| PGdn | Home |  Del | End  |      |      |
+ * |      | Undo |  Cut | Copy | Paste|      |-------|              |-------| PGdn | Home |  Del | End  | BSWrd|      |
  * `-----------------------------------------/       /               \      \-----------------------------------------'
  *            |      |      |      |BSpace| /  ADJ  /                 \ RAISE\  |      |      |      |      |
  *            |      |      |      |      |/       /                   \      \ |      |      |      |      |
@@ -109,13 +109,13 @@
  */
             bindings = <
 &trans     &trans       &trans         &trans        &trans           &trans                                  &trans    &trans    &trans    &trans     &trans     &trans
-&trans     &trans       &kp INS        &kp PSCRN     &kp K_CMENU      &trans                                  &trans    &kp _PWRD &kp UP    &kp _NWRD  &kp _BSWRD &kp FI_GRV
+&trans     &trans       &kp INS        &kp PSCRN     &kp K_CMENU      &trans                                  &trans    &kp _PWRD &kp UP    &kp _NWRD  &trans     &kp FI_GRV
 &trans     &kp _REDO    &kp _SAVE      &kp _SNIP     &kp _SEARCH      &trans                                  &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC   &kp FI_QUOT
-&trans     &kp _UNDO    &kp _CUT       &kp _COPY     &kp _PASTE       &trans      &trans           &trans     &kp PG_DN &kp HOME  &kp DEL   &kp END    &trans     &trans
+&trans     &kp _UNDO    &kp _CUT       &kp _COPY     &kp _PASTE       &trans      &trans           &trans     &kp PG_DN &kp HOME  &kp DEL   &kp END    &kp _BSWRD &trans
                         &trans         &trans        &trans           &kp BSPC    &mo ADJUST       &trans     &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN &inc_dec_kp C_VOL_UP C_VOL_DN>; //Flipped to normal
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>; //Flipped to normal
         };
 
         adjust_layer {
@@ -143,7 +143,7 @@
                         &trans         &trans         &trans          &trans        &trans          &trans     &trans     &trans     &trans     &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
 
         numpad_layer {
@@ -171,7 +171,7 @@
                         &trans        &trans      &trans       &trans  &trans       &trans  &trans    &kp N0    &trans        &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
 
 //        template_layer {
@@ -199,7 +199,7 @@
 //                      &trans     &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans     &trans
 //            >;
 //
-//            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+//            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
 //        };
 
 
