@@ -99,9 +99,9 @@
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |      |      | Ins  | Pscr | Menu |      |                              |      | PWrd |  Up  | NWrd |      |  `   |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |      | Redo | Save | Snip |Search|      |-------.              ,-------| PGup | Left | Down | Rigth|BSpace|  '   |
+ * |      | Redo | Save | Snip |Search|      |-------.              ,-------| PGup | Left | Down | Rigth|BSWrd |  '   |
  * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
- * |      | Undo |  Cut | Copy | Paste|      |-------|              |-------| PGdn | Home |  Del | End  | BSWrd|      |
+ * |      | Undo |  Cut | Copy | Paste|      |-------|              |-------| PGdn | Home |  Del | End  |BSpace|      |
  * `-----------------------------------------/       /               \      \-----------------------------------------'
  *            |      |      |      |BSpace| /  ADJ  /                 \ RAISE\  |      |      |      |      |
  *            |      |      |      |      |/       /                   \      \ |      |      |      |      |
@@ -110,8 +110,8 @@
             bindings = <
 &trans     &trans       &trans         &trans        &trans           &trans                                  &trans    &trans    &trans    &trans     &trans     &trans
 &trans     &trans       &kp INS        &kp PSCRN     &kp K_CMENU      &trans                                  &trans    &kp _PWRD &kp UP    &kp _NWRD  &trans     &kp FI_GRV
-&trans     &kp _REDO    &kp _SAVE      &kp _SNIP     &kp _SEARCH      &trans                                  &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp BSPC   &kp FI_QUOT
-&trans     &kp _UNDO    &kp _CUT       &kp _COPY     &kp _PASTE       &trans      &trans           &trans     &kp PG_DN &kp HOME  &kp DEL   &kp END    &kp _BSWRD &trans
+&trans     &kp _REDO    &kp _SAVE      &kp _SNIP     &kp _SEARCH      &trans                                  &kp PG_UP &kp LEFT  &kp DOWN  &kp RIGHT  &kp _BSWRD &kp FI_QUOT
+&trans     &kp _UNDO    &kp _CUT       &kp _COPY     &kp _PASTE       &trans      &trans           &trans     &kp PG_DN &kp HOME  &kp DEL   &kp END    &kp BSPC   &trans
                         &trans         &trans        &trans           &kp BSPC    &mo ADJUST       &trans     &trans    &trans    &trans    &trans
             >;
 
