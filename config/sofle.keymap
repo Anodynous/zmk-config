@@ -171,7 +171,7 @@
                         &trans        &trans      &trans       &trans  &trans          &trans  &trans    &kp N0    &trans        &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>; //Flipped to normal
         };
 
 //        template_layer {
