@@ -73,7 +73,7 @@
 #define FI_K    (K)    // K
 #define FI_L    (L)    // L
 #define FI_ODIA (SEMICOLON) // Ö
-#define FI_ADIA (DOUBLE_QUOTES) // Ä
+#define FI_ADIA (SINGLE_QUOTE) // Ä
 #define FI_QUOT (NON_US_HASH) // '
 // Row 4
 #define FI_LABK (NON_US_BSLH) // <
