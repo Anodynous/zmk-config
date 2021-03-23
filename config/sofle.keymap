@@ -31,6 +31,11 @@
 #define _BSWRD LC(BSPC)
 #define _ALTF4 LA(F4)
 
+// Custom debounce-period to mitigate unwanted duplicate keypresses
+&kscan0 {
+    debounce-period = <10>;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
