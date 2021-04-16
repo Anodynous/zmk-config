@@ -178,7 +178,7 @@
                         &trans        &trans      &trans       &trans     &trans             &trans     &kp KP_ENTER  &kp KP_N0       &trans           &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>; //Flipped to normal
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>; //Flipped compared to other layers
         };
 
         steno_layer {
@@ -203,7 +203,7 @@
 &none      &kp S      &kp T      &kp P      &kp H      &kp T                                    &kp Y      &kp F      &kp P      &kp L      &kp T      &kp D 
 &kp LSHFT  &kp S      &kp K      &kp W      &kp R      &kp G                                    &kp H      &kp R      &kp B      &kp G      &kp S      &kp Z 
 &none      &none      &none      &none      &none      &none      &trans             &trans     &none      &none      &none      &none      &none      &none 
-                      &none      &kp N1     &kp A      &kp O      &trans             &trans     &kp E      &kp U      &KP N1     &none
+                      &none      &kp N1     &kp A      &kp O      &trans             &trans     &kp E      &kp U      &kp N1     &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
