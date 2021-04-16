@@ -16,6 +16,7 @@
 #define RAISE 2
 #define ADJUST 3
 #define NUMPAD 4
+#define STENO 5
 
 // Custom Keycodes
 #define _SNIP LG(LS(S))  // Windows snip shortcut
@@ -133,7 +134,7 @@
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |BT_PRV|      |      |      |      |      |                              |      | Text | Jrnl | Word |      |      |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |      |      |      | NUMP |DFAULT| CAPS |-------.              ,-------|      | Files| Calc | Excel|      |      |
+ * |      |      | STENO| NUMP |DFAULT| CAPS |-------.              ,-------|      | Files| Calc | Excel|      |      |
  * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|              |-------|      | Web  |      | Mail |      |      |
  * `-----------------------------------------/       /               \      \-----------------------------------------'
@@ -144,7 +145,7 @@
             bindings = <
 &bt BT_NXT   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4                                &bt BT_CLR  &trans                  &trans            &trans          &trans     &ext_power EP_TOG
 &bt BT_PRV   &trans         &trans         &trans         &trans          &trans                                      &trans      &kp C_AL_TEXT_EDITOR    &kp C_AL_JOURNAL  &kp C_AL_WORD   &trans     &trans
-&trans       &trans         &trans         &to NUMPAD     &to DEFAULT     &kp CLCK                                    &trans      &kp C_AL_MY_COMPUTER    &kp C_AL_CALC     &kp C_AL_SHEET  &trans     &trans
+&trans       &trans         &to STENO      &to NUMPAD     &to DEFAULT     &kp CLCK                                    &trans      &kp C_AL_MY_COMPUTER    &kp C_AL_CALC     &kp C_AL_SHEET  &trans     &trans
 &trans       &trans         &trans         &trans         &trans          &trans        &trans             &trans     &trans      &kp K_WWW               &trans            &kp C_AL_MAIL   &trans     &trans
                             &trans         &trans         &trans          &trans        &trans             &trans     &trans      &trans                  &trans            &trans
             >;
@@ -180,6 +181,35 @@
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>; //Flipped to normal
         };
 
+        steno_layer {
+            
+ /*
+ * STENO
+ * ,-----------------------------------------.                    ,-----------------------------------------.
+ * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      |  S   |  T   |   P  |  H   |  *   |                    |   *  |   F  |  P   |  L   |  T   |  D   |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |LShift|  S   |  K   |   W  |  R   |  *   |-------.    ,-------|   *  |   R  |  B   |  G   |  S   |  Z   |
+ * |------+------+------+------+------+------|  MUTE |    |  PLAY |------+------+------+------+------+------|
+ * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |      |
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *            |      |  #   |  A   |  O   | / LOWER /       \ RAISE\  |  E   |  U   |  #    |      |
+ *            |      |      |      |      |/       /         \      \ |      |      |       |      |
+ *            `----------------------------------'           '------''---------------------------'
+ */
+            bindings = <6
+&none      &none      &none      &none      &none      &none                                    &none      &none      &none      &none      &none      &none 
+&none      &kp S      &kp T      &kp P      &kp H      &kp T                                    &kp Y      &kp F      &kp P      &kp L      &kp T      &kp D 
+&kp LSHFT  &kp S      &kp K      &kp W      &kp R      &kp G                                    &kp H      &kp R      &kp B      &kp G      &kp S      &kp Z 
+&none      &none      &none      &none      &none      &none      &trans             &trans     &none      &none      &none      &none      &none      &none 
+                      &none      &kp N1     &kp A      &kp O      &trans             &trans     &kp E      &kp U      &KP N1     &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+        };
+
+
 //        template_layer {
 //
 /* 
@@ -207,7 +237,6 @@
 //
 //            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
 //        };
-
 
     };
 };
