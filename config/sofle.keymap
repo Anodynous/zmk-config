@@ -34,7 +34,7 @@
 
 // Custom debounce-period to mitigate unwanted duplicate keypresses
 &kscan0 {
-    debounce-period = <20>;
+    debounce-period = <15>;
 };
 
 / {
