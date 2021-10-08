@@ -102,7 +102,7 @@
 /* 
  * RAISE
  * ,----------------------------------------.                               ,-----------------------------------------.
- * |      |      |      |      |      |      |                              |      |      |      |      |      |      |
+ * |      |      |      |      |      |      |                              |      |      |      |      |      |  `   |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |      |ALT F4| Ins  | Pscr | Menu |      |                              |      | PWrd |  Up  | NWrd |      |  `   |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
@@ -115,7 +115,7 @@
  *            `----------------------------------'                      '------''---------------------------'
  */
             bindings = <
-&trans     &trans       &trans       &trans        &trans           &trans                                     &trans     &trans     &trans    &trans     &trans      &trans
+&trans     &trans       &trans       &trans        &trans           &trans                                     &trans     &trans     &trans    &trans     &trans      &kp FI_GRV
 &trans     &kp _ALTF4   &kp INS      &kp PSCRN     &kp K_CMENU      &trans                                     &trans     &kp _PWRD  &kp UP    &kp _NWRD  &trans      &kp FI_GRV
 &trans     &kp _REDO    &kp _SAVE    &kp _SNIP     &kp _SEARCH      &trans                                     &kp PG_UP  &kp LEFT   &kp DOWN  &kp RIGHT  &kp _BSWRD  &kp FI_QUOT
 &trans     &kp _UNDO    &kp _CUT     &kp _COPY     &kp _PASTE       &trans      &trans              &trans     &kp PG_DN  &kp HOME   &kp DEL   &kp END    &kp BSPC    &trans
