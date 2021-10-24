@@ -37,15 +37,6 @@
 // Mousekey settings
 #define U_MOUSE_MOVE_MAX 2500
 #define U_MOUSE_SCROLL_MAX 30
-&mmv {
-  time-to-max-speed-ms = <750>;
-  acceleration-exponent = <2>;
-  delay-ms = <100>;
-};
-
-&mwh {
-  acceleration-exponent = <0>;
-};
 
 
 / {
