@@ -238,10 +238,10 @@
  *            `----------------------------------'                      '------''---------------------------'
  */
             bindings = <
-&trans     &trans     &trans     &trans     &trans     &trans                                   &trans            &trans            &trans           &trans           &trans      &trans
-&trans     &trans     &trans     &trans     &trans     &trans                                   &trans            &mwh SCROLL_DOWN  &mmv MOVE_UP     &mwh SCROLL_UP   &trans      &trans
-&trans     &trans     &trans     &trans     &trans     &trans                                   &mwh SCROLL_RIGHT &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp MPREV  &trans
-&trans     &trans     &trans     &trans     &trans     &trans     &trans             &trans     &mwh SCROLL_LEFT  &mkp LCLK         &mkp MCLK        &mkp RCLK        &mkp MNEXT  &trans
+&trans     &trans     &trans     &trans     &trans     &trans                                   &trans            &trans            &trans           &trans           &trans    &trans
+&trans     &trans     &trans     &trans     &trans     &trans                                   &trans            &mwh SCROLL_DOWN  &mmv MOVE_UP     &mwh SCROLL_UP   &trans    &mkp MB6
+&trans     &trans     &trans     &trans     &trans     &trans                                   &mwh SCROLL_RIGHT &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp MB4  &mkp MB7
+&trans     &trans     &trans     &trans     &trans     &trans     &trans             &trans     &mwh SCROLL_LEFT  &mkp LCLK         &mkp MCLK        &mkp RCLK        &mkp MB5  &mkp MB8
                       &trans     &trans     &trans     &trans     &trans             &trans     &trans            &trans            &trans           &trans
             >;
 
