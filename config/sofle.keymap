@@ -35,16 +35,15 @@
 #define _ALTF4 LA(F4)
 
 // Mousekey settings
-#define U_MOUSE_MOVE_MAX 1500
-#define U_MOUSE_SCROLL_MAX 100
+#define U_MOUSE_MOVE_MAX 2000
+#define U_MOUSE_SCROLL_MAX 30
 &mmv {
-  time-to-max-speed-ms = <500>;
+  time-to-max-speed-ms = <1000>;
   acceleration-exponent = <1>;
 };
 
 &mwh {
-  time-to-max-speed-ms = <5000>;
-  acceleration-exponent = <1>;
+  acceleration-exponent = <0>;
 };
 
 
