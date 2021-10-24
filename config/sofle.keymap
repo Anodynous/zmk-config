@@ -35,6 +35,8 @@
 #define _ALTF4 LA(F4)
 
 // Mousekey settings
+#define U_MOUSE_MOVE_MAX 1500
+#define U_MOUSE_SCROLL_MAX 100
 &mmv {
   time-to-max-speed-ms = <500>;
   acceleration-exponent = <1>;
@@ -44,9 +46,6 @@
   time-to-max-speed-ms = <5000>;
   acceleration-exponent = <1>;
 };
-#define U_MOUSE_MOVE_MAX 1500
-#define U_MOUSE_SCROLL_MAX 100
-
 
 
 / {
@@ -239,11 +238,11 @@
  *            `----------------------------------'                      '------''---------------------------'
  */
             bindings = <
-&trans     &trans     &trans     &trans     &trans     &trans                                   &trans     &trans            &trans           &trans           &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans                                   &trans     &mwh SCRL_DOWN    &mmv MOVE_UP     &mwh SCROLL_UP   &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans                                   &trans     &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans     &trans             &trans     &trans     &mkp LCLK         &mkp MCLK        &mkp RCLK        &trans     &trans
-                      &trans     &trans     &trans     &trans     &trans             &trans     &trans     &trans            &trans           &trans
+&trans     &trans     &trans     &trans     &trans     &trans                                   &trans            &trans            &trans           &trans           &trans      &trans
+&trans     &trans     &trans     &trans     &trans     &trans                                   &trans            &mwh SCROLL_DOWN  &mmv MOVE_UP     &mwh SCROLL_UP   &trans      &trans
+&trans     &trans     &trans     &trans     &trans     &trans                                   &mwh SCROLL_RIGHT &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp MPREV  &trans
+&trans     &trans     &trans     &trans     &trans     &trans     &trans             &trans     &mwh SCROLL_LEFT  &mkp LCLK         &mkp MCLK        &mkp RCLK        &mkp MNEXT  &trans
+                      &trans     &trans     &trans     &trans     &trans             &trans     &trans            &trans            &trans           &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_UP C_VOL_DN>; //Flipped compared to other layers
