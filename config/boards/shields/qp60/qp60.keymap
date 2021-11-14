@@ -13,6 +13,18 @@
 #define DEFAULT 0
 #define STENO 1
 
+&kscan0 {
+	events = <
+		/* press combo */
+		ZMK_MOCK_PRESS(0,0,10) 
+		/* press and release other key */
+		ZMK_MOCK_PRESS(0,1,10)
+		ZMK_MOCK_RELEASE(0,1,10)
+		/* release combo */
+		ZMK_MOCK_RELEASE(0,0,10)
+	>;
+}; 
+
 / {
     behaviors {
 		macro_rf: macro_rf {
@@ -63,18 +75,6 @@ CLICK       | F1_5  | F2_5  | F3_5  | F4_5  | TH1_5 | TH2_5 |                 | 
 
     };
 };
-
-&kscan0 {
-	events = <
-		/* press combo */
-		ZMK_MOCK_PRESS(0,0,10) 
-		/* press and release other key */
-		ZMK_MOCK_PRESS(0,1,10)
-		ZMK_MOCK_RELEASE(0,1,10)
-		/* release combo */
-		ZMK_MOCK_RELEASE(0,0,10)
-	>;
-}; 
 
 //        template_layer {
 /*
