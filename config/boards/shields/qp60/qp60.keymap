@@ -15,7 +15,7 @@
 
 / {
     behaviors {
-		macro_1: macro_1 {
+		macro_1: macro_rf {
 			compatible = "zmk,behavior-macro";
 			label = "MACRO_RF";
 			#binding-cells = <0>;
