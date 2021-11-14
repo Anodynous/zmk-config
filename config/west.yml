@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/okke-formsma
   projects:
     - name: zmk
-      remote: okke-formsma
-      revision: macros
+      remote: anodynous
+      revision: macros_hold
       import: app/west.yml
   self:
     path: config

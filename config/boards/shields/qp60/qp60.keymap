@@ -19,7 +19,7 @@
 			label = "MACRO_1";
 			#binding-cells = <0>;
 			bindings = <&kp R>, <&kp F>;
-            //mode = "hold"; -> Need https://github.com/zmkfirmware/zmk/commit/fdf6831ba146e36799c8960347cfe3e402fcbd7b for hold support, newer version dropped it
+            mode = "hold";
 		};
 	};
 
