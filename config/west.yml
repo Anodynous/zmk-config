@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/anodynous
   projects:
     - name: zmk
-      remote: anodynous
-      revision: mouse-pr_debounce
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config
