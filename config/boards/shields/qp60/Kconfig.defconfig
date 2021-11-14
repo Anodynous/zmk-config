@@ -1,0 +1,26 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_QP60_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "qp60 Left"
+
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default y
+	
+endif
+
+if SHIELD_QP60_RIGHT
+
+config ZMK_KEYBOARD_NAME
+	default "qp60 Right"
+
+endif
+
+if SHIELD_QP60_LEFT || SHIELD_QP60_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
