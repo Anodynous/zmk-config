@@ -12,6 +12,17 @@
 #define DEFAULT 0
 #define STENO 1
 
+// Steno macros
+#define sm(NODELABEL, NODE, LABEL, KEY1, KEY2) \
+    NODELABEL: NODE { \
+        compatible = "zmk,behavior-macro"; \
+        label = LABEL; \
+        #binding-cells = <0>; \
+        bindings = <&kp KEY1>, <&kp KEY2>; \
+        mode = "hold";\
+    }
+
+
 / {
     behaviors {
 		macro_1: macro_1 {
@@ -21,6 +32,9 @@
 			bindings = <&kp R>, <&kp F>;
             mode = "hold";
 		};
+
+        // Steno macro definitions
+        sm(smhr, sm_hr, "SM_HR", R, F);
 	};
 
 
@@ -54,7 +68,7 @@ CLICK       | F1_5  | F2_5  | F3_5  | F4_5  | TH1_5 | TH2_5 |                 | 
 */
             bindings = <
 &kp Q     &kp W     &kp E     &kp R      &kp T     &none                 &none     &none     &none     &none     &none     &none
-&none     &none     &none     &macro_1   &none     &none                 &none     &none     &none     &none     &none     &none
+&none     &none     &none     &smhr      &none     &none                 &none     &none     &none     &none     &none     &none
 &kp A     &kp S     &kp D     &kp F      &kp G     &to DEFAULT           &none     &none     &none     &none     &none     &none
 &none     &none     &none     &macro_1   &none     &none                 &none     &none     &none     &none     &none     &none
 &none     &none     &none     &none      &none     &none                 &none     &none     &none     &none     &none     &none
