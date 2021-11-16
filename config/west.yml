@@ -6,10 +6,12 @@ manifest:
       url-base: https://github.com/anodynous
     - name: okke-formsma
       url-base: https://github.com/okke-formsma
+      name: dnaq
+      url-base: https://github.com/dnaq
   projects:
     - name: zmk
-      remote: anodynous
-      revision: steno_macros
+      remote: dnaq
+      revision: plover-hid-hog-attempt
       import: app/west.yml
   self:
     path: config
