@@ -12,40 +12,41 @@
 #define DEFAULT 0
 #define STENO 1
 
-/ {
-    /*
-    behaviors {
-		//macro_1: macro_1 {
-		//	compatible = "zmk,behavior-macro";
-		//	label = "MACRO_1";
-		//	#binding-cells = <0>;
-		//	bindings = <&kp R>, <&kp F>;
-        //    mode = "hold";
-		//};
+// Steno macros
+#define stn_mc(NODELABEL, NODE, LABEL, KEY1, KEY2) \
+    NODELABEL: NODE { \
+        compatible = "zmk,behavior-macro"; \
+        label = LABEL; \
+        #binding-cells = <0>; \
+        bindings = <&kp KEY1>, <&kp KEY2>; \
+        mode = "hold";\
+    }
 
+/ {
+    behaviors {
         // Steno macro definitions, Left
-        stn_mc(sm_hr, sm_hr, "SM_HR", R, F);
-        stn_mc(sm_pw, sm_pw, "SM_PW", E, D);
-        stn_mc(sm_tk, sm_tk, "SM_TK", W, S);
-        stn_mc(sm_ao, sm_ao, "SM_AO", C, V);
+        stn_mc(sm_TK, sm_tk, "SM_TK", PLV_TL, PLV_KL);
+        stn_mc(sm_HR, sm_hr, "SM_HR", PLV_HL, PLV_RL);
+        stn_mc(sm_PW, sm_pw, "SM_PW", PLV_PL, PLV_WL);
+        stn_mc(sm_AO, sm_ao, "SM_AO", PLV_A, PLV_O);
         // Steno macro definitions, Right
-        stn_mc(sm_eu, sm_eu, "SM_EU", N, M);
-        stn_mc(sm_fr, sm_fr, "SM_FR", U, J);
-        stn_mc(sm_pb, sm_pb, "SM_PB", I, K);
-        stn_mc(sm_lg, sm_lg, "SM_LG", O, L);
+        stn_mc(sm_EU, sm_eu, "SM_EU", PLV_E, PLV_U);
+        stn_mc(sm_FR, sm_fr, "SM_FR", PLV_FR, PLV_RR);
+        stn_mc(sm_PB, sm_pb, "SM_PB", PLV_PR, PLV_BR);
+        stn_mc(sm_LG, sm_lg, "SM_LG", PLV_LR, PLV_GR);
 	};
-    */
+    
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
 /* DEFAULT:
-UP          | F1_1  | F2_1  | F3_1  | F4_1  | TH1_1 | TH2_1 |                 | TH2_1 | TH1_1 | F4_1  | F3_1  | F2_1  | F1_1  |
-RIGHT       | F1_2  | F2_2  | F3_2  | F4_2  | TH1_2 | TH2_2 |                 | TH2_2 | TH1_2 | F4_2  | F3_2  | F2_2  | F1_2  |
-DOWN        | F1_3  | F2_3  | F3_3  | F4_3  | TH1_3 | TH2_3 |                 | TH2_3 | TH1_3 | F4_3  | F3_3  | F2_3  | F1_4  |
-LEFT        | F1_4  | F2_4  | F3_4  | F4_4  | TH1_4 | TH2_4 |                 | TH2_4 | TH1_4 | F4_4  | F3_4  | F2_4  | F1_5  |
-CLICK       | F1_5  | F2_5  | F3_5  | F4_5  | TH1_5 | TH2_5 |                 | TH2_5 | TH1_5 | F4_5  | F3_5  | F2_5  | F1_5  |
+UP          | F1_1  | F2_1  | F3_1  | F4_1  | TH1_1 | TH2_1 |                 | TH2_1 | TH1_1 | F4_1  | F3_1  | F2_1  | F1_1  |     UP
+RIGHT       | F1_2  | F2_2  | F3_2  | F4_2  | TH1_2 | TH2_2 |                 | TH2_2 | TH1_2 | F4_2  | F3_2  | F2_2  | F1_2  |     RIGHT
+DOWN        | F1_3  | F2_3  | F3_3  | F4_3  | TH1_3 | TH2_3 |                 | TH2_3 | TH1_3 | F4_3  | F3_3  | F2_3  | F1_4  |     DOWN
+LEFT        | F1_4  | F2_4  | F3_4  | F4_4  | TH1_4 | TH2_4 |                 | TH2_4 | TH1_4 | F4_4  | F3_4  | F2_4  | F1_5  |     LEFT
+CLICK       | F1_5  | F2_5  | F3_5  | F4_5  | TH1_5 | TH2_5 |                 | TH2_5 | TH1_5 | F4_5  | F3_5  | F2_5  | F1_5  |     CLICK
 */
             bindings = <
 &kp GRAVE &kp N1 &kp N2   &kp N3   &kp N4    &kp N5                      &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &none
@@ -58,18 +59,18 @@ CLICK       | F1_5  | F2_5  | F3_5  | F4_5  | TH1_5 | TH2_5 |                 | 
         
         steno_layer {
 /* STENO
-UP          | F1_1  | F2_1  | F3_1  | F4_1  | TH1_1 | TH2_1 |                 | TH2_1 | TH1_1 | F4_1  | F3_1  | F2_1  | F1_1  |
-RIGHT       | F1_2  | F2_2  | F3_2  | F4_2  | TH1_2 | TH2_2 |                 | TH2_2 | TH1_2 | F4_2  | F3_2  | F2_2  | F1_2  |
-DOWN        | F1_3  | F2_3  | F3_3  | F4_3  | TH1_3 | TH2_3 |                 | TH2_3 | TH1_3 | F4_3  | F3_3  | F2_3  | F1_4  |
-LEFT        | F1_4  | F2_4  | F3_4  | F4_4  | TH1_4 | TH2_4 |                 | TH2_4 | TH1_4 | F4_4  | F3_4  | F2_4  | F1_5  |
-CLICK       | F1_5  | F2_5  | F3_5  | F4_5  | TH1_5 | TH2_5 |                 | TH2_5 | TH1_5 | F4_5  | F3_5  | F2_5  | F1_5  |
+UP          | F1_1  | F2_1  | F3_1  | F4_1  | TH1_1 | TH2_1 |                 | TH2_1 | TH1_1 | F4_1  | F3_1  | F2_1  | F1_1  |     UP
+RIGHT       | F1_2  | F2_2  | F3_2  | F4_2  | TH1_2 | TH2_2 |                 | TH2_2 | TH1_2 | F4_2  | F3_2  | F2_2  | F1_2  |     RIGHT
+DOWN        | F1_3  | F2_3  | F3_3  | F4_3  | TH1_3 | TH2_3 |                 | TH2_3 | TH1_3 | F4_3  | F3_3  | F2_3  | F1_4  |     DOWN
+LEFT        | F1_4  | F2_4  | F3_4  | F4_4  | TH1_4 | TH2_4 |                 | TH2_4 | TH1_4 | F4_4  | F3_4  | F2_4  | F1_5  |     LEFT
+CLICK       | F1_5  | F2_5  | F3_5  | F4_5  | TH1_5 | TH2_5 |                 | TH2_5 | TH1_5 | F4_5  | F3_5  | F2_5  | F1_5  |     CLICK
 */
             bindings = <
-&kp Q     &kp W     &kp E     &kp R      &kp C     &kp PLV_O             &none     &kp N     &kp U     &kp I     &kp O     &none
-&none     &none     &none     &none      &none     &none                 &none     &none     &none     &none     &none     &none
-&kp A     &kp S     &kp D     &kp F      &kp V     &to DEFAULT           &none     &kp M     &kp J     &kp K     &kp L     &none
-&none     &none     &none     &kp T      &none     &none                 &none     &none     &kp Y     &none     &none     &none
-&none     &none     &none     &none      &none     &none                 &none     &none     &none     &none     &none     &none
+&kp PLV_S1  &kp PLV_TL  &kp PLV_PL  &kp PLV_HL  &kp PLV_O   &none                 &none     &kp PLV_E   &kp PLV_F   &kp PLV_P   &kp PLV_L   &kp PLV_TR
+&none       &none       &none       &kp PLV_ST1 &none       &none                 &none     &sm_EU      &sm_FR      &sm_PB      &sm_LG      &kp PLV_SR
+&kp PLV_S2  &kp PLV_KL  &kp PLV_WL  &kp PLV_RL  &kp PLV_A   &to DEFAULT           &none     &kp PLV_U   &kp PLV_R   &kp PLV_B   &kp PLV_G   &kp PLV_ZR
+&none       &sm_TK      &sm_PW      &sm_HR      &sm_AO      &none                 &none     &none       &kp PLV_ST2 &none       &none       &kp PLV_DR
+&none       &none       &none       &none       &none       &none                 &none     &none       &none       &none       &none       &none
             >;
         };
 
