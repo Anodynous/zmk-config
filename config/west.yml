@@ -10,8 +10,8 @@ manifest:
       url-base: https://github.com/dnaq
   projects:
     - name: zmk
-      remote: dnaq
-      revision: plover-hid-hog-attempt
+      remote: anodynous
+      revision: steno_macros
       import: app/west.yml
   self:
     path: config
