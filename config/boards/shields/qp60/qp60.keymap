@@ -12,18 +12,8 @@
 #define DEFAULT 0
 #define STENO 1
 
-// Steno macros
-#define stn_mc(NODELABEL, NODE, LABEL, KEY1, KEY2) \
-    NODELABEL: NODE { \
-        compatible = "zmk,behavior-macro"; \
-        label = LABEL; \
-        #binding-cells = <0>; \
-        bindings = <&kp KEY1>, <&kp KEY2>; \
-        mode = "hold";\
-    }
-
-
 / {
+    /*
     behaviors {
 		//macro_1: macro_1 {
 		//	compatible = "zmk,behavior-macro";
@@ -44,7 +34,7 @@
         stn_mc(sm_pb, sm_pb, "SM_PB", I, K);
         stn_mc(sm_lg, sm_lg, "SM_LG", O, L);
 	};
-
+    */
 
     keymap {
         compatible = "zmk,keymap";
@@ -75,8 +65,8 @@ LEFT        | F1_4  | F2_4  | F3_4  | F4_4  | TH1_4 | TH2_4 |                 | 
 CLICK       | F1_5  | F2_5  | F3_5  | F4_5  | TH1_5 | TH2_5 |                 | TH2_5 | TH1_5 | F4_5  | F3_5  | F2_5  | F1_5  |
 */
             bindings = <
-&kp Q     &kp W     &kp E     &kp R      &kp C     &kp PLV_O                 &none     &kp N     &kp U     &kp I     &kp O     &none
-&none     &sm_tk    &sm_pw    &sm_hr     &sm_ao    &none                 &none     &sm_eu    &sm_fr    &sm_pb    &sm_lg     &none
+&kp Q     &kp W     &kp E     &kp R      &kp C     &kp PLV_O             &none     &kp N     &kp U     &kp I     &kp O     &none
+&none     &none     &none     &none      &none     &none                 &none     &none     &none     &none     &none     &none
 &kp A     &kp S     &kp D     &kp F      &kp V     &to DEFAULT           &none     &kp M     &kp J     &kp K     &kp L     &none
 &none     &none     &none     &kp T      &none     &none                 &none     &none     &kp Y     &none     &none     &none
 &none     &none     &none     &none      &none     &none                 &none     &none     &none     &none     &none     &none
