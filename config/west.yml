@@ -5,7 +5,7 @@ manifest:
     - name: anodynous
       url-base: https://github.com/anodynous
   projects:
-    - name: zmk
+    - name: zmk-original-repo
       remote: anodynous
       revision: mouse-pr_debounce
       import: app/west.yml
