@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk-original-repo
       remote: anodynous
-      revision: mouse-pr_debounce
+      revision: main_mouse-pr
       import: app/west.yml
   self:
     path: config
