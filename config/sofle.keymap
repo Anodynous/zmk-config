@@ -117,7 +117,7 @@
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |      |ALT F4| Ins  | Pscr | Menu |      |                              |      | PWrd |  Up  | NWrd |      |  '   |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |      | Redo | Save | Snip |Search|      |-------.              ,-------| PGup | Left | Down | Rigth|BSWrd |  ´   |
+ * |      | Redo | Save |      |Search|      |-------.              ,-------| PGup | Left | Down | Rigth|BSWrd |  ´   |
  * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
  * |      | Undo |  Cut | Copy | Paste|      |-------|              |-------| PGdn | Home |  Del | End  |BSpace|      |
  * `-----------------------------------------/       /               \      \-----------------------------------------'
@@ -128,7 +128,7 @@
             bindings = <
 &trans     &trans       &trans       &trans        &trans           &trans                                     &trans     &trans     &trans    &trans     &trans      &kp FI_GRV
 &trans     &kp _ALTF4   &kp INS      &kp PSCRN     &kp K_CMENU      &trans                                     &trans     &kp _PWRD  &kp UP    &kp _NWRD  &trans      &kp FI_QUOT
-&trans     &kp _REDO    &kp _SAVE    &kp _SNIP     &kp _SEARCH      &trans                                     &kp PG_UP  &kp LEFT   &kp DOWN  &kp RIGHT  &kp _BSWRD  &kp FI_ACUT
+&trans     &kp _REDO    &kp _SAVE    &trans        &kp _SEARCH      &trans                                     &kp PG_UP  &kp LEFT   &kp DOWN  &kp RIGHT  &kp _BSWRD  &kp FI_ACUT
 &trans     &kp _UNDO    &kp _CUT     &kp _COPY     &kp _PASTE       &trans      &trans              &trans     &kp PG_DN  &kp HOME   &kp DEL   &kp END    &kp BSPC    &trans
                         &trans       &trans        &trans           &kp BSPC    &mo ADJUST          &trans     &trans     &trans     &trans    &trans
             >;
@@ -143,7 +143,7 @@
  * ,-----------------------------------------.                              ,-----------------------------------------.
  * |BT_NXT| BT0  | BT1  | BT2  | BT3  | BT4  |                              |BTCLR |      |      |      |      |SftRST|
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |BT_PRV|      |      |      |      |      |                              |      | Text | Jrnl | Word |      |      |
+ * |BT_PRV|      |      | SNIP |      |      |                              |      | Text | Jrnl | Word |      |      |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |      | MKEY | STENO| NUMP |DFAULT| CAPS |-------.              ,-------|      | Files| Calc | Excel|      |      |
  * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
@@ -155,7 +155,7 @@
  */
             bindings = <
 &bt BT_NXT   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4                                &bt BT_CLR  &trans                  &trans            &trans          &trans     &reset
-&bt BT_PRV   &trans         &trans         &trans         &trans          &trans                                      &trans      &kp C_AL_TEXT_EDITOR    &kp C_AL_JOURNAL  &kp C_AL_WORD   &trans     &trans
+&bt BT_PRV   &trans         &kp _SNIP      &trans         &trans          &trans                                      &trans      &kp C_AL_TEXT_EDITOR    &kp C_AL_JOURNAL  &kp C_AL_WORD   &trans     &trans
 &trans       &to MKEY       &to STENO      &to NUMPAD     &to DEFAULT     &kp CLCK                                    &trans      &kp C_AL_MY_COMPUTER    &kp C_AL_CALC     &kp C_AL_SHEET  &trans     &trans
 &trans       &trans         &trans         &trans         &trans          &trans        &trans             &trans     &trans      &kp K_WWW               &trans            &kp C_AL_MAIL   &trans     &trans
                             &trans         &trans         &trans          &trans        &trans             &trans     &trans      &trans                  &trans            &trans
@@ -203,9 +203,9 @@
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |LShift|  S   |  K   |   W  |  R   |  *   |-------.    ,-------|   *  |   R  |  B   |  G   |  S   |  Z   |
  * |------+------+------+------+------+------|  MUTE |    |  PLAY |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |      |SPACE |
+ * |      |      |      |      |      |      |-------|    |-------|      |      |      |      |SPACE|BSPACE |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            |      |  #   |  A   |  O   | / LOWER /       \ RAISE\  |  E   |  U   |  #    |      |
+ *            |      |      |  #   |  A   | / O     /       \  E   \  |   U  |      |       |      |
  *            |      |      |      |      |/       /         \      \ |      |      |       |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -213,8 +213,8 @@
 &trans     &trans     &trans     &trans     &trans     &trans                                   &trans     &trans     &trans     &trans     &trans       &to DEFAULT 
 &trans     &kp Q      &kp W      &kp E      &kp R      &kp T                                    &kp Y      &kp U      &kp I      &kp O      &kp P        &kp FI_ARNG 
 &kp LSHFT  &kp A      &kp S      &kp D      &kp F      &kp G                                    &kp H      &kp J      &kp K      &kp L      &kp FI_ODIA  &kp FI_ADIA 
-&trans     &none      &none      &none      &none      &none      &trans             &trans     &none      &none      &none      &none      &none        &kp SPACE 
-                      &trans     &kp N1     &kp C      &kp V      &trans             &trans     &kp N      &kp M      &kp N1     &trans
+&trans     &none      &none      &none      &none      &none      &trans             &trans     &none      &none      &none      &none      &kp SPACE    &kp BSPC 
+                      &trans     &trans     &kp N1     &kp C      &kp V              &kp N     &kp M       &trans      &to DEFAULT     &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
