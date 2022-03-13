@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: anodynous
-      revision: updated_mouse-pr
+      revision: mouse_pr_and_plover_hid
       import: app/west.yml
   self:
     path: config  
