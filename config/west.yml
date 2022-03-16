@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: anodynous
-      revision: updated_mouse-pr
+      revision: updated_mouse-pr_split-encoder
       import: app/west.yml
   self:
     path: config  
