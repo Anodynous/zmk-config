@@ -36,7 +36,7 @@
 &kscan0 {
     //debounce-period = <16>;
     debounce-press-ms = <0>;
-    debounce-release-ms = <0>;
+    debounce-release-ms = <3>;
 };
 
 / {
