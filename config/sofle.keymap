@@ -35,7 +35,7 @@
 
 // Macro for outputting a single caret (^) symbol
 ZMK_BEHAVIOR(macro_caret, macro,
-    wait-ms = <10>;
+    wait-ms = <5>;
     tap-ms = <5>;
     bindings = <&macro_press &kp LSHFT>,
                <&macro_tap &kp FI_DIAE>,
@@ -44,12 +44,13 @@ ZMK_BEHAVIOR(macro_caret, macro,
 )
 // Macro for outputting a single tilde (~) symbol
 ZMK_BEHAVIOR(macro_tilde, macro,
-    wait-ms = <10>;
+    wait-ms = <5>;
     tap-ms = <5>;
     bindings = <&macro_press &kp RALT>,
                <&macro_tap &kp FI_DIAE>,
+               <&macro_tap &kp FI_DIAE>,
                <&macro_release &kp RALT>,
-               <&macro_tap &kp SPACE>;
+               <&macro_tap &kp BSPC>;
 )
 
 / {
