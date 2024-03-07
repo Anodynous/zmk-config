@@ -48,8 +48,8 @@ ZMK_BEHAVIOR(macro_tilde, macro,
     tap-ms = <5>;
     bindings = <&macro_press &kp RALT>,
                <&macro_tap &kp FI_DIAE>,
-               <&macro_release &kp RALT>;
-               <&macro_tap &kp SPACE>,
+               <&macro_release &kp RALT>,
+               <&macro_tap &kp SPACE>;
 )
 
 / {
