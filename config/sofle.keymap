@@ -34,7 +34,7 @@
 #define _ALTF4 LA(F4)
 
 // Macro for outputting a single caret (^) symbol
-ZMK_BEHAVIOR(macro_caret, macro,
+ZMK_MACRO(macro_caret, macro,
     wait-ms = <5>;
     tap-ms = <5>;
     bindings = <&macro_press &kp LSHFT>,
@@ -43,7 +43,7 @@ ZMK_BEHAVIOR(macro_caret, macro,
                <&macro_release &kp LSHFT>;
 )
 // Macro for outputting a single tilde (~) symbol
-ZMK_BEHAVIOR(macro_tilde, macro,
+ZMK_MACRO(macro_tilde, macro,
     wait-ms = <10>;
     tap-ms = <10>;
     bindings = <&macro_press &kp RALT>,
