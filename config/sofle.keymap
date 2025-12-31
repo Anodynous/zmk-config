@@ -82,7 +82,7 @@ ZMK_MACRO(macro_tilde,
 &kp TAB     &kp Q    &kp W        &kp E     &kp R      &kp T                                     &kp Y    &kp U     &kp I      &kp O     &kp P        &kp FI_ARNG
 &kp LSHFT   &kp A    &kp S        &kp D     &kp F      &kp G                                     &kp H    &kp J     &kp K      &kp L     &kp FI_ODIA  &kp FI_ADIA
 &kp LCTRL   &kp Z    &kp X        &kp C     &kp V      &kp B      &kp C_MUTE          &kp C_PP   &kp N    &kp M     &kp COMMA  &kp DOT   &kp FI_MINS  &kp RSHFT
-                     &mo NUMPAD   &kp LALT  &kp RCTRL  &kp SPACE  &mo LOWER           &mo RAISE  &kp RET  &kp RCTRL &kp RALT   &kp RGUI
+                     &mo NUMPAD   &trans    &kp RCTRL  &kp SPACE  &mo LOWER           &mo RAISE  &kp RET  &kp RCTRL &kp RALT   &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
@@ -109,7 +109,7 @@ ZMK_MACRO(macro_tilde,
 &trans       &kp F1       &kp F2       &kp F3         &kp F4       &kp F5                                         &kp F6       &kp F7       &kp F8       &kp F9       &kp F10      &kp F11
 &trans       &kp N1       &kp N2       &kp N3         &kp N4       &kp N5                                         &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp F12
 &kp ESC      &kp FI_EXLM  &kp FI_DQUO  &kp FI_HASH    &kp FI_EQL   &kp FI_PERC                                    &kp FI_AMPR  &kp FI_SLSH  &kp FI_LPRN  &kp FI_RPRN  &kp FI_QUES  &kp FI_PIPE
-&macro_caret &macro_tilde &kp FI_AT    &kp FI_PLUS    &kp FI_LCBR  &kp FI_RCBR   &trans             &trans        &kp FI_LBRC  &kp FI_RBRC  &kp FI_LABK  &kp FI_RABK  &kp FI_BSLS  &kp FI_ASTR
+&trans       &trans       &kp FI_AT    &kp FI_PLUS    &kp FI_LCBR  &kp FI_RCBR   &trans             &trans        &kp FI_LBRC  &kp FI_RBRC  &kp FI_LABK  &kp FI_RABK  &kp FI_BSLS  &kp FI_ASTR
                           &trans       &trans         &trans       &trans        &trans             &mo ADJUST    &trans       &trans       &trans       &trans
             >;
 
