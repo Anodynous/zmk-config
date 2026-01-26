@@ -18,6 +18,7 @@
 #define ADJUST 3
 #define NUMPAD 4
 #define STENO 5
+#define GAMING 5
 
 // Custom Keycodes
 #define _SNIP LG(LS(S))  // Windows snip shortcut
@@ -153,7 +154,7 @@ ZMK_MACRO(macro_tilde,
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
  * |BT_PRV|      |      |      |      |      |                              |      | Text | Jrnl | Word |      |      |
  * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
- * |      |      | STENO| NUMP |DFAULT| CAPS |-------.              ,-------|      | Files| Calc | Excel|      |      |
+ * |      |GAMING| STENO| NUMP |DFAULT| CAPS |-------.              ,-------|      | Files| Calc | Excel|      |      |
  * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
  * |      |      |      |      |      |      |-------|              |-------|      | Web  |      | Mail |      |      |
  * `-----------------------------------------/       /               \      \-----------------------------------------'
@@ -164,7 +165,7 @@ ZMK_MACRO(macro_tilde,
             bindings = <
 &bt BT_NXT   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3    &bt BT_SEL 4                                &bt BT_CLR  &trans                  &trans            &trans          &trans     &soft_off
 &bt BT_PRV   &trans         &trans         &trans         &trans          &trans                                      &trans      &kp C_AL_TEXT_EDITOR    &kp C_AL_JOURNAL  &kp C_AL_WORD   &trans     &trans
-&trans       &trans         &to STENO      &to NUMPAD     &to DEFAULT     &kp CLCK                                    &trans      &kp C_AL_MY_COMPUTER    &kp C_AL_CALC     &kp C_AL_SHEET  &trans     &trans
+&trans       &to GAMING     &to STENO      &to NUMPAD     &to DEFAULT     &kp CLCK                                    &trans      &kp C_AL_MY_COMPUTER    &kp C_AL_CALC     &kp C_AL_SHEET  &trans     &trans
 &trans       &trans         &trans         &trans         &trans          &trans        &trans             &trans     &trans      &kp K_WWW               &trans            &kp C_AL_MAIL   &trans     &trans
                             &trans         &trans         &trans          &trans        &trans             &trans     &trans      &trans                  &trans            &trans
             >;
@@ -227,7 +228,33 @@ ZMK_MACRO(macro_tilde,
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
         };
+        
+        gaming_layer {
+/* 
+ * GAMING
+ * ,-----------------------------------------.                              ,-----------------------------------------.
+ * | ESC  |   1  |   2  |   3  |   4  |   5  |                              |   6  |   7  |   8  |   9  |   0  |   '  |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * | Tab  |   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |   Å  |
+ * |------+------+------+------+------+------|                              |------+------+------+------+------+------|
+ * |LShift|   A  |   S  |   D  |   F  |   G  |-------.              ,-------|   H  |   J  |   K  |   L  |   Ö  |   Ä  |
+ * |------+------+------+------+------+------|  MUTE |              |  PLAY |------+------+------+------+------+------|
+ * | LCTR |   Z  |   X  |   C  |   V  |   B  |-------|              |-------|   N  |   M  |   ,  |   .  |   -  |RShift|
+ * `-----------------------------------------/       /               \      \-----------------------------------------'
+ *            |NUMPAD| LAlt | RCTR |SPACE | / LOWER /                 \ RAISE\  |Enter |RCTRL | RAlt  | RGUI |
+ *            | temp |      |      |      |/       /                   \      \ |      |      |       |      |
+ *            `----------------------------------'                      '------''----------------------------'
+ */
+            bindings = <
+&kp ESC     &kp N1   &kp N2       &kp N3    &kp N4     &kp N5                                    &kp N6   &kp N7    &kp N8     &kp N9    &kp N0       &kp FI_QUOT
+&kp TAB     &kp Q    &kp W        &kp E     &kp R      &kp T                                     &kp Y    &kp U     &kp I      &kp O     &kp P        &kp FI_ARNG
+&sp LSHFT   &kp A    &kp S        &kp D     &kp F      &kp G                                     &kp H    &kp J     &kp K      &kp L     &kp FI_ODIA  &kp FI_ADIA
+&kp LCTRL   &kp Z    &kp X        &kp C     &kp V      &kp B      &kp C_MUTE          &kp C_PP   &kp N    &kp M     &kp COMMA  &kp DOT   &kp FI_MINS  &kp RSHFT
+                     &mo NUMPAD   &kp LALT  &kp RCTRL  &kp SPACE  &mo LOWER           &mo RAISE  &kp RET  &kp RCTRL &kp RALT   &kp RGUI
+            >;
 
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_DN PG_UP>;
+        };
 
 //        template_layer {
 //
