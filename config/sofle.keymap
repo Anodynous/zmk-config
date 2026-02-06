@@ -58,8 +58,9 @@ ZMK_MACRO(macro_tilde,
 };
 
 &sk {
-    release-after-ms = <2000>;
+    release-after-ms = <750>;
     quick-release;
+    lazy;
     /delete-property/ ignore-modifiers;
 };
 
